@@ -1,5 +1,6 @@
 package net.fernandosimon.books.domain;
 
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -9,7 +10,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @date 2020-04-05
  * @time 00:02
  */
-
+@Data
+@AllArgsConstructor
 @Document
 public class Book {
 
@@ -19,4 +21,6 @@ public class Book {
     private String name;
     private int nPages;
     private String author;
+
+
 }

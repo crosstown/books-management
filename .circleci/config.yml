@@ -7,14 +7,14 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/openjdk:11
+      - image: circleci/openjdk:11.0.1-jdk
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/postgres:9.4
 
-    working_directory: ~/repo
+    working_directory: ~/books-management
 
     environment:
       # Customize the JVM maximum heap limit
@@ -41,8 +41,6 @@ jobs:
       - run: mvn integration-test cobertura:cobertura
 
       - store_test_results:
-          path: target/surefire-reports
+          path: target/classes
+          destination: books-mangement
 
-      - run:
-          name: Send to CodeCov
-          command: bash <(curl -s https://codecov.io/bash)
