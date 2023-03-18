@@ -24,6 +24,7 @@ public class ApplicationBootstrap implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        
         System.out.println("Application started ...");
 
         bookRepository.save(new Book("AA123", "Misterio de las valijas verdes", 120, "Raul Scanio"));
